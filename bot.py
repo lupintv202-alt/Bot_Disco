@@ -1,3 +1,11 @@
+import os
+import json
+
+# Создаем key.json из переменной окружения
+if not os.path.exists("key.json"):
+    google_key_raw = os.getenv("GOOGLE_KEY")
+    with open("key.json", "w") as f:
+        f.write(google_key_raw)
 import telebot
 from telebot import types
 import gspread
